@@ -1,0 +1,3 @@
+<% protos.each do |proto| -%>
+<%= name %>	<%= port %>/<%= proto %>	<%= Array(aliases).join(' ') if aliases != :undef %>	# <%= comment if comment != :undef %>
+<% end -%>

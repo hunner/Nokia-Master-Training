@@ -1,0 +1,10 @@
+LSB Release:      <%= lsbdistdescription %>
+domain:           <%= domain %>
+free memory:      <%= memoryfree %>
+operating system: <%= operatingsystem %>
+interfaces:
+<% interfaces.split(',').each do |inter| -%>
+<% if has_variable?('ipaddress_' + inter) then -%>
+  <%= sprintf('%8s: %16s', inter, eval('ipaddress_' + inter)) %>
+<% end -%>
+<% end -%>
